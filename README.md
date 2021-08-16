@@ -52,6 +52,8 @@
         if sign == 'win':
             if you == self.loadings[0] and computer == self.loadings[1]:
                 img = np.hstack([cv2.imread(self.pngs[0]), cv2.imread(self.pngs[1])])
+![win](https://user-images.githubusercontent.com/70878758/129601054-227b6c92-a772-47fb-85f3-a3b02479e4f7.png)
+
             elif you == self.loadings[1] and computer == self.loadings[2]:
                 img = np.hstack([cv2.imread(self.pngs[1]), cv2.imread(self.pngs[2])])
             elif you == self.loadings[2] and computer == self.loadings[0]:
@@ -63,6 +65,8 @@
                 img = np.hstack([cv2.imread(self.pngs[1]), cv2.imread(self.pngs[0])])
             elif you == self.loadings[2] and computer == self.loadings[1]:
                 img = np.hstack([cv2.imread(self.pngs[2]), cv2.imread(self.pngs[1])])
+![lose](https://user-images.githubusercontent.com/70878758/129601287-869d2ed2-7779-4a0a-95a0-a33cb4945280.png)
+
         cv2.imshow('You %s!' % sign, img)
         cv2.waitKey(0)
         
@@ -72,10 +76,16 @@
         while self.run <= 3:
             try:
                 choice = input('\nGuess(press q to quit) :\n 0)rock 1)scissor 2)paper: ')
+                
+                
+#### 如果輸入無論是否包含空白鍵的大小寫Q都可以退出遊戲
                 if choice.strip().lower() == 'q':
                     print('\033[31m See you next time, %s \033[0m' % name)
                     print('\033[31m Quit the game. \033[0m')
                     return
+   ![QUIT](https://user-images.githubusercontent.com/70878758/129601817-c58ce1da-58ad-4bd7-928d-5461117a8d19.png)
+
+                   
                 if not choice:
                     continue
 
@@ -109,12 +119,14 @@
                 if i in self.all_charts:
                     print('Please enter valid name.')
                     continue
+![invalid](https://user-images.githubusercontent.com/70878758/129600760-7242790b-0b91-4ca2-8c11-e7a8453c931d.png)
+
 #### 如果輸入為有效，即顯示有效名稱
             if username.isalpha() is True:
                 print('Valid name :%s.' % username)
                 time.sleep(1)
                 break
-                ![valid](https://user-images.githubusercontent.com/70878758/129600374-1ec89df8-9450-452d-9f5b-91b39799d68c.png)
+![valid](https://user-images.githubusercontent.com/70878758/129600374-1ec89df8-9450-452d-9f5b-91b39799d68c.png)
 
 #### 倒數三秒，進入遊戲
         print("Are you ready? %s" % username)
@@ -123,7 +135,7 @@
             print("|", str(i).center(3), " |")
         print('+', "-"*4, "+")
         self.play(username)
-        ![count](https://user-images.githubusercontent.com/70878758/129600275-c7388bf5-d59d-4c87-bbc0-487903ae696f.png)
+![count](https://user-images.githubusercontent.com/70878758/129600275-c7388bf5-d59d-4c87-bbc0-487903ae696f.png)
 
 
 ####  主函數
